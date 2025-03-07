@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Rachana OR - Contact</title>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-left">
+            <a href="../../public/index.html" class="navbar-logo">Rachana OR</a>
+        </div>
+        <nav class="navbar-right">
+            <a href="about.html" class="nav-link">À propos de moi</a>
+            <a href="experiences.html" class="nav-link">Expériences</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <section class="section contact-section">
+        <div class="center">
+            <h1>Contact</h1>
+            <p>Vous pouvez me contacter par mail à l'adresse suivante : 
+            <a href="mailto:rachana.or2005@gmail.com">rachana.or2005@gmail.com</a></p>
+            <p>Ou utilisez le formulaire ci-dessous pour m'envoyer un message :</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Envoyer</button>
+        </form>
+        </div>
+    </section>
+
+    <script src="/effectjs/activeLink.js"></script>
+</body>
+</html>
