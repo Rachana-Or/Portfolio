@@ -1,46 +1,90 @@
-html {
-    scroll-behavior: smooth;
-    transition: ease-in-out 0.5s;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --cp-yellow: #fcee0a;
+    --cp-cyan: #00f0ff;
+    --cp-red: #ff003c;
+    --cp-dark: #080808;
+    --cp-panel: rgba(10, 10, 12, 0.85);
+    --cp-text: #e0e0e0;
 }
 
-/* Réinitialisation des marges et du box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Style de base pour le corps */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: black;
-    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--cp-dark);
+    color: var(--cp-text);
     overflow-x: hidden;
+    background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
 }
 
-/* Style pour le canevas des particules */
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    color: var(--cp-yellow);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px var(--cp-red);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--cp-dark);
+    border-bottom: 2px solid var(--cp-cyan);
+    box-shadow: 0 0 10px var(--cp-cyan);
+    position: sticky;
     top: 0;
-    left: 0;
+    z-index: 1000;
 }
 
-/* Style général pour les sections */
+.navbar-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--cp-cyan);
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--cp-cyan);
+}
+
+.nav-link {
+    font-size: 1.1em;
+    color: var(--cp-text);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--cp-yellow);
+    border: 1px solid var(--cp-yellow);
+    background: rgba(252, 238, 10, 0.1);
+    box-shadow: 0 0 8px rgba(252, 238, 10, 0.5);
+}
+
 .section {
     position: relative;
     z-index: 1;
     padding: 100px 20px;
     text-align: center;
-    color: white;
-}
-
-/* Style pour les titres et paragraphes dans les sections */
-.section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .section p {
@@ -48,350 +92,150 @@ body {
     max-width: 800px;
     margin: 0 auto 20px;
     line-height: 1.6;
+    background: var(--cp-panel);
+    padding: 20px;
+    border-left: 4px solid var(--cp-cyan);
 }
 
-/* Style de la première section (Header) */
-.header-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 100vh;
-}
-
-.header-section h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-/* Style pour les liens sociaux */
-.social-links a {
-    color: white;
-    margin-top: 10px;
-    font-size: 3em;
-}
-
-/* Style pour les sections spécifiques */
-.section-about {
-    background-color: rgba(26, 26, 26, 0.9);
-}
-
-.section-projects {
-    background-color: rgba(51, 51, 51, 0.9);
-}
-
-/* Style pour le bouton "Lire plus" et les liens de navigation */
-.more-button, .nav-link {
+.more-button, .cv-download-link, .submit-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.2em;
-    background-color: #000000;
-    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--cp-yellow);
+    color: var(--cp-dark);
     text-decoration: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.more-button:hover, .nav-link:hover {
-    background-color: #145e61;
-}
-
-.nav-link.active {
-    background-color: #145e61;
-    color: #ffffff;
-    border-radius: 5px;
-}
-
-/* Style de la barre de navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #000000;
-    border-bottom: 2px solid #ffffff;
-}
-
-.navbar-logo {
-    font-size: 1.5em;
-    color: #ffffff;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-/* Style pour la section "À propos de moi" */
-header.about-section {
-    margin: 50px 0;
-}
-
-.header-section {
     position: relative;
-    padding-bottom: 50px; /* Ajoute un espace en bas de la section pour la flèche */
-    text-align: center;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    transition: all 0.2s ease-in-out;
 }
 
-.down-arrow {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2em;
-    color: white;
-    animation: bounce 2s infinite;
-    text-decoration: none; /* Supprime le soulignement pour le lien */
-}
-
-/* Animation de rebond */
-@keyframes bounce {
-    0%, 100% {
-        transform: translate(-50%, 0);
-    }
-    50% {
-        transform: translate(-50%, 10px);
-    }
-}
-
-/* Égaliser la hauteur de chaque section */
-.section {
-    min-height: 100vh; /* Chaque section prend la hauteur de l'écran */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centre le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    padding: 40px 20px;
-    box-sizing: border-box;
-}
-
-.hobbies-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1rem;
-    max-width: 800px;
-    margin: auto;
-}
-
-.about-section h1 {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-fieldset legend {
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.about-section p {
-    color: #cccccc;
-    line-height: 1.6;
-}
-
-.skills-section h2 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-.skills-section {
-    text-align: center;
-    padding: 70px 20px;
-    background-color: #1e1e1e;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Plus grand espace pour chaque item */
-    gap: 30px; /* Espacement plus large */
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #2a2a2a;
-    color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease; /* Animation de transition */
-}
-
-.skill-item:hover {
-    transform: scale(1.05); /* Zoom léger au survol */
-}
-
-
-.skill-icon {
-    width: 80px; /* Icône plus grande */
-    height: 80px;
-    margin-bottom: 15px;
-}
-
-.project-description {
-    font-size: 1em;
-    color: #cccccc;
-    text-align: center;
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-/*Logiciel section*/
-.logiciel-section {
-    text-align: center;
-    padding: 70px 20px;
-    background-color: #1a1a1a; /* Couleur de fond légèrement différente pour distinguer */
-}
-
-.logiciel-section h2 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-.logiciel-section .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.logiciel-section .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #2a2a2a;
-    color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.logiciel-section .skill-item:hover {
+.more-button:hover, .cv-download-link:hover, .submit-button:hover {
+    background-color: var(--cp-cyan);
+    color: var(--cp-dark);
+    box-shadow: 0 0 15px var(--cp-cyan);
     transform: scale(1.05);
 }
 
-.logiciel-section .skill-icon {
-    width: 80px;
-    height: 80px;
+.skills-grid, .logiciel-section .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.skill-item, .experience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cp-panel);
+    border: 1px solid #333;
+    border-right: 3px solid var(--cp-red);
+    border-bottom: 3px solid var(--cp-red);
+    color: var(--cp-text);
+    transition: all 0.3s ease;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.skill-item:hover, .experience-card:hover {
+    border-color: var(--cp-cyan);
+    box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
     margin-bottom: 15px;
+    filter: drop-shadow(0px 0px 5px rgba(255,255,255,0.5));
 }
 
-/*CV section*/
-.cv-section {
-    text-align: center;
-    padding: 70px 20px;
-    background-color: #141414; /* Couleur de fond pour le CV */
+.experience-card h2 {
+    font-size: 1.4em;
+    color: var(--cp-cyan);
+    text-shadow: none;
+    margin-bottom: 10px;
 }
 
-.cv-section h2 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-.cv-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #2a2a2a;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.cv-container p {
-    font-size: 1.2em;
-    color: #cccccc;
-    margin-bottom: 20px;
-}
-
-.cv-download-link {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #000000;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.cv-download-link:hover {
-    background-color: #145e61;
-}
-
-/*Formulaire contact section*/
-.contact-section {
-    text-align: center;
-    padding: 70px 20px;
-    background-color: #141414; /* Couleur de fond pour la section contact */
-}
-
-.contact-section h1 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-.contact-section p {
-    font-size: 1.2em;
-    color: #cccccc;
-    margin-bottom: 20px;
+.experience-card p {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1em;
 }
 
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #2a2a2a;
+    background-color: var(--cp-panel);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-size: 1.1em;
-    color: #ffffff;
-    margin-bottom: 5px;
+    border: 1px solid var(--cp-cyan);
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3a3a3a;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    border: 1px solid #444;
+    background-color: #000;
+    color: var(--cp-yellow);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1em;
 }
 
-.submit-button {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #000000;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--cp-cyan);
+    box-shadow: 0 0 8px var(--cp-cyan);
 }
 
-.submit-button:hover {
-    background-color: #145e61;
+.glitch-text {
+    position: relative;
+    color: var(--cp-text);
+    font-size: 4em;
+    font-family: 'Orbitron', sans-serif;
+}
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--cp-dark);
+}
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--cp-red);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--cp-cyan);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 31px, 0); }
+    20% { clip: rect(65px, 9999px, 86px, 0); }
+    40% { clip: rect(110px, 9999px, 11px, 0); }
+    60% { clip: rect(24px, 9999px, 46px, 0); }
+    80% { clip: rect(80px, 9999px, 20px, 0); }
+    100% { clip: rect(33px, 9999px, 79px, 0); }
+}
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(10px, 9999px, 31px, 0); }
+    40% { clip: rect(80px, 9999px, 20px, 0); }
+    60% { clip: rect(110px, 9999px, 11px, 0); }
+    80% { clip: rect(33px, 9999px, 79px, 0); }
+    100% { clip: rect(24px, 9999px, 46px, 0); }
 }
