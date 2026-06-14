@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Rachana OR - Netrunner</title>
+    <title>Rachana OR - Netrunner Terminal</title>
 </head>
 
 <body>
+    <div class="scanlines"></div>
+
     <header class="navbar">
         <div class="navbar-left">
             <a href="index.html" class="navbar-logo">R.OR_V3.0</a>
         </div>
         <nav class="navbar-right">
-            <a href="src/pages/about.html" class="nav-link">Sys_Infos</a>
+            <a href="src/pages/about.html" class="nav-link">Cyberwares</a>
             <a href="src/pages/experiences.html" class="nav-link">Data_Logs</a>
             <a href="src/pages/contact.html" class="nav-link">Ping_Me</a>
         </nav>
@@ -25,16 +27,16 @@
             <h1 class="glitch-text" data-text="RACHANA OR">RACHANA OR</h1>
             <h2 style="color: var(--cp-cyan); text-shadow: none;">SysAdmin // Dev_Backend // Netrunner</h2>
             <div class="social-links" style="margin-top: 30px;">
-                <a href="https://www.linkedin.com/in/rachana-or/" target="_blank" style="color: var(--cp-cyan); text-shadow: 0 0 10px var(--cp-cyan);">
+                <a href="https://www.linkedin.com/in/rachana-or/" target="_blank" style="color: var(--cp-cyan); text-shadow: 0 0 10px var(--cp-cyan); font-size: 2em;">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/rachana-or" target="_blank" style="color: var(--cp-yellow); text-shadow: 0 0 10px var(--cp-yellow); margin-left: 20px;">
+                <a href="https://github.com/rachana-or" target="_blank" style="color: var(--cp-yellow); text-shadow: 0 0 10px var(--cp-yellow); margin-left: 20px; font-size: 2em;">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
         
-        <div class="down-arrow" style="color: var(--cp-red); margin-top: 60px;">
+        <div class="down-arrow" style="color: var(--cp-red); margin-top: 60px; font-size: 2em;">
             <a href="#about-section" style="color: inherit;">
                 <i class="fas fa-chevron-down"></i>
             </a>
@@ -42,17 +44,56 @@
     </section>
 
     <section id="about-section" class="section section-about">
-        <h2>[ À propos de moi ]</h2>
+        <h2>>_ STATUS_REPORT</h2>
         <p>Je suis Rachana OR, étudiant en 3e année de BUT Informatique à l'Université Paris-Saclay. 
-            Passionné par la programmation, l'architecture réseau et le hardware, j'ai développé une solide maîtrise des technologies de l'information. Mon arsenal inclut Python, Bash, Django, Kubernetes, et les bases de données complexes.
-            Actuellement à la recherche d'un stage de 22 semaines à partir de septembre.</p>
-        <a href="src/pages/about.html" class="more-button">Extract_Data()</a>
+            Passionné par la programmation, l'architecture réseau et le hardware, j'ai développé une solide maîtrise des technologies de l'information. 
+            <br><br><span style="color: var(--cp-yellow);">[RECHERCHE ACTIVE]</span> Stage de 22 semaines (5 mois) à partir de septembre.</p>
+        <a href="src/assets/images/RACHANA.OR_CV26.pdf" class="more-button" target="_blank" download>Download_CV()</a>
     </section>
 
     <section class="section section-projects">
-        <h2>[ Mes Projets Récents ]</h2>
-        <p>Au cours de ma formation, j'ai réalisé plusieurs projets d'envergure : programmation d'intelligences artificielles pour robots Nao, développement d'architectures web sécurisées sous Django, et création de graphes Web Sémantique croisés avec l'API Wikidata. Ces missions m'ont permis de consolider mon profil d'ingénieur logiciel et d'administrateur système.</p>
-        <a href="src/pages/experiences.html" class="more-button">Load_Archives()</a>
+        <h2>>_ BOUNTIES_RÉCENTES</h2>
+        <div class="projects-flex-container">
+            <div class="experience-card holo-card">
+                <h2>Projet Robotique & IA – Nao</h2>
+                <div class="tech-badges">
+                    <span class="badge yellow">Python</span>
+                    <span class="badge cyan">Git/Jira</span>
+                </div>
+                <p>Conception d'un jeu de cache-cache autonome entre deux robots humanoïdes. IA de trajectoire optimale et algorithme de pathfinding en équipe Agile.</p>
+            </div>
+
+            <div class="experience-card holo-card">
+                <h2>Analyse Web Sémantique</h2>
+                <div class="tech-badges">
+                    <span class="badge yellow">Python/Flask</span>
+                    <span class="badge cyan">SPARQL</span>
+                    <span class="badge red">RDF</span>
+                </div>
+                <p>Modélisation et conversion d'un jeu de données de criminalité en graphe RDF. Enrichissement via l'API Wikidata et interface web d'analyse.</p>
+            </div>
+
+            <div class="experience-card holo-card">
+                <h2>Plateforme Offres de Stages</h2>
+                <div class="tech-badges">
+                    <span class="badge yellow">Django</span>
+                    <span class="badge cyan">Bootstrap</span>
+                    <span class="badge red">Chart.js</span>
+                </div>
+                <p>Application web professionnelle complète pour diffuser des offres de stages et gérer les candidatures de l'IUT. Tableau de bord de statistiques visuelles intégré.</p>
+            </div>
+
+            <div class="experience-card holo-card">
+                <h2>Référendum Citoyen</h2>
+                <div class="tech-badges">
+                    <span class="badge yellow">PHP</span>
+                    <span class="badge cyan">MySQL</span>
+                    <span class="badge red">REST API</span>
+                </div>
+                <p>Création d'une plateforme de démocratie participative incluant une gestion complète de la participation (propositions, discussions, votes) et une API REST.</p>
+            </div>
+        </div>
+        <a href="src/pages/experiences.html" class="more-button" style="margin-top: 30px;">Load_Full_Archives()</a>
     </section>
 
     <script src="effectjs/scroll.js"></script>
