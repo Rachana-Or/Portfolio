@@ -340,3 +340,100 @@ h1, h2, h3 {
     min-width: 290px;       
     text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .navbar-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .glitch-text {
+        font-size: 2.5em; 
+    }
+    
+    .header-section h2 {
+        font-size: 1em;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .section {
+        padding: 60px 15px;
+        min-height: auto;
+    }
+
+    .section p {
+        font-size: 1em;
+        padding: 15px;
+    }
+
+    .more-button, .cv-download-link, .submit-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .projects-flex-container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .projects-flex-container .experience-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: unset;
+    }
+
+    .skills-grid, .logiciel-section .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .timeline-grid {
+        grid-template-columns: 1fr !important; 
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .glitch-text {
+        font-size: 1.8em;
+    }
+    
+    .navbar-logo {
+        font-size: 1.5em;
+    }
+    
+    .tech-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .badge {
+        width: 100%;
+        text-align: center;
+    }
+}
